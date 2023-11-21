@@ -1,4 +1,4 @@
-package ucase
+package usecase
 
 import "github.com/fulviocanducci/go/internal/entity"
 
