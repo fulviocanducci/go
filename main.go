@@ -1,7 +1,9 @@
-package program
+package main
 
 import (
 	"database/sql"
+
+	_ "github.com/mattn/go-sqlite3"
 )
 
 func main() {
@@ -9,5 +11,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	db.Exec("CREATE TABLE sources(int id, text name)")
+	_, err = db.Exec("CREATE TABLE sources(int id, text name)")
+	if err != nil {
+		panic(err)
+	}
 }
